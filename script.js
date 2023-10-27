@@ -1,5 +1,21 @@
-$(function() {
-    $("h1").text("State Capitals!");
-  })
+$(document).ready(function () {
+    var correctAnswer = "C"; 
 
-  //start here
+$('.option').click(function () {
+        $('.option').removeClass('selected');
+        $(this).addClass('selected');
+        selectedAnswer = $(this).text().charAt(0); 
+});
+    $('.option').hover(function () {
+        $('#submit-btn').show();
+    });           
+    $('#submit-btn').click(function () {
+        if (selectedAnswer === correctAnswer) {
+            $('#result').text('Correct!');
+        } else {
+            $('#result').text('Incorrect');}
+        $('#result').show();
+    });
+});
+
+
